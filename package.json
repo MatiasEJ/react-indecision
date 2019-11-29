@@ -1,0 +1,15 @@
+{
+  "name": "React-Indecision",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "MatiasJuncos",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4"
+  }
+}
