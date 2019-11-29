@@ -7,8 +7,9 @@ console.log("app running");
 
 var user = {
     name: '',
-    edad: 28,
-    lugar: 'casa'
+    edad: 8,
+    lugar: 'casa',
+    opt: ['one', 'two']
 };
 
 function getLocation(lugar) {
@@ -33,7 +34,21 @@ var template2 = React.createElement(
         user.name ? user.name : 'anonimo',
         ' '
     ),
-    getLocation(user.lugar)
+    user.age && user.age >= 18 && React.createElement(
+        'p',
+        null,
+        'Age: ',
+        user.age
+    ),
+    getLocation(user.lugar),
+    user.opt.length >= 0 && React.createElement(
+        'p',
+        null,
+        'Opciones: ',
+        user.opt[0],
+        ' ',
+        user.opt[1]
+    )
 );
 
 var appRoot = document.getElementById('app');

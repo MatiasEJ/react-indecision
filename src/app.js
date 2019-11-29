@@ -5,8 +5,9 @@ console.log("app running");
 
 let user = {
     name: '',
-    edad: 28,
-    lugar: 'casa'
+    edad: 8,
+    lugar: 'casa',
+    opt: ['one','two']
 };
 
 function getLocation(lugar){
@@ -20,8 +21,9 @@ function getLocation(lugar){
 let template2 = (
     <div>
         <h1> {user.name ? user.name : 'anonimo'} </h1> 
-       
+        {(user.age && user.age >= 18 ) && <p>Age: {user.age}</p>}
         {getLocation(user.lugar)}
+        {user.opt.length >=0 && <p>Opciones: {user.opt[0]} {user.opt[1]}</p>}
         
     </div>
 );
