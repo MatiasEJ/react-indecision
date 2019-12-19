@@ -27,11 +27,19 @@ const onFormSubmit = (e)=>{
 }
 
 //removeall
-const removeOnSub = (e)=>{
+const removeOnSub = ()=>{
     app.options =[];
     console.log("borranding");
     rendNew();
 }
+
+// DECISION
+const makeDecision = () => {
+    const rndNum = Math.floor(Math.random() * app.options.length);
+    const option = app.options[rndNum];
+    alert(option);
+}
+
 
 let template2 = (
     <div>
@@ -40,15 +48,13 @@ let template2 = (
     <h1>{app.title}} </h1> 
     <p>Cantidad de opciones: {app.options.length}</p>
 
-    
-    <ol>
-        <li> <p>{app.options}</p></li>
-    </ol>
-    
+       
     <form onSubmit={onFormSubmit}>
     <input type="text" name="option"></input>
     <button>AddOpt</button>
     <button onClick={removeOnSub}>delete</button>
+    <button onClick={makeDecision}>DECISION</button>
+
     </form>
 
 
@@ -68,10 +74,6 @@ const rendNew = ()=>{
         <h1>{app.title}} </h1> 
         <p>Cantidad de opciones: {app.options.length}</p>
 
-        
-        <ol>
-            <li> <p>{app.options}</p></li>
-        </ol>
         {
             app.options.map((num)=>{
                 return <p key={num}>Tarea: {num}</p>
@@ -85,6 +87,7 @@ const rendNew = ()=>{
         <input type="text" name="option"></input>
         <button>AddOpt</button>
         <button onClick={removeOnSub}>delete</button>
+        <button disabled={app.options.length == 0} onClick={makeDecision}>DECISION</button>
         </form>
 
 

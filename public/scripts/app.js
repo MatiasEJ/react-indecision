@@ -25,10 +25,17 @@ var onFormSubmit = function onFormSubmit(e) {
 };
 
 //removeall
-var removeOnSub = function removeOnSub(e) {
+var removeOnSub = function removeOnSub() {
     app.options = [];
     console.log("borranding");
     rendNew();
+};
+
+// DECISION
+var makeDecision = function makeDecision() {
+    var rndNum = Math.floor(Math.random() * app.options.length);
+    var option = app.options[rndNum];
+    alert(option);
 };
 
 var template2 = React.createElement(
@@ -47,20 +54,6 @@ var template2 = React.createElement(
         app.options.length
     ),
     React.createElement(
-        'ol',
-        null,
-        React.createElement(
-            'li',
-            null,
-            ' ',
-            React.createElement(
-                'p',
-                null,
-                app.options
-            )
-        )
-    ),
-    React.createElement(
         'form',
         { onSubmit: onFormSubmit },
         React.createElement('input', { type: 'text', name: 'option' }),
@@ -73,6 +66,11 @@ var template2 = React.createElement(
             'button',
             { onClick: removeOnSub },
             'delete'
+        ),
+        React.createElement(
+            'button',
+            { onClick: makeDecision },
+            'DECISION'
         )
     )
 );
@@ -96,20 +94,6 @@ var rendNew = function rendNew() {
             'Cantidad de opciones: ',
             app.options.length
         ),
-        React.createElement(
-            'ol',
-            null,
-            React.createElement(
-                'li',
-                null,
-                ' ',
-                React.createElement(
-                    'p',
-                    null,
-                    app.options
-                )
-            )
-        ),
         app.options.map(function (num) {
             return React.createElement(
                 'p',
@@ -131,6 +115,11 @@ var rendNew = function rendNew() {
                 'button',
                 { onClick: removeOnSub },
                 'delete'
+            ),
+            React.createElement(
+                'button',
+                { disabled: app.options.length == 0, onClick: makeDecision },
+                'DECISION'
             )
         )
     );
