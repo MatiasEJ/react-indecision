@@ -2,6 +2,9 @@ console.log("app running");
 // babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 //live-server public
 //JSX - Javascript XML
+
+// const React = require('react'); 
+
 let app = {
     title: 'IndescApp',
     edad: 8,
@@ -45,7 +48,7 @@ let template2 = (
     <div>
         
              
-    <h1>{app.title}} </h1> 
+    <h1>{app.title} </h1> 
     <p>Cantidad de opciones: {app.options.length}</p>
 
        
@@ -71,7 +74,7 @@ const rendNew = ()=>{
     let template2 = (
         <div>
             
-        <h1>{app.title}} </h1> 
+        <h1>{app.title} </h1> 
         <p>Cantidad de opciones: {app.options.length}</p>
 
         {

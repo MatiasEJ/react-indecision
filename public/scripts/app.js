@@ -4,6 +4,9 @@ console.log("app running");
 // babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 //live-server public
 //JSX - Javascript XML
+
+// const React = require('react'); 
+
 var app = {
     title: 'IndescApp',
     edad: 8,
@@ -45,7 +48,7 @@ var template2 = React.createElement(
         'h1',
         null,
         app.title,
-        '} '
+        ' '
     ),
     React.createElement(
         'p',
@@ -86,7 +89,7 @@ var rendNew = function rendNew() {
             'h1',
             null,
             app.title,
-            '} '
+            ' '
         ),
         React.createElement(
             'p',
