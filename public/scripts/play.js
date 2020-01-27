@@ -1,75 +1,6 @@
-class Counter extends React.Component { 
-    constructor(props) {
-        super(props);
-        this.resetAll = this.resetAll.bind(this);
-        this.plusOne = this.plusOne.bind(this);
-        this.minusOne = this.minusOne.bind(this);
-        this.escondete = this.escondete.bind(this);
-        this.state = {
-            count: 0,
-            visibility: false
-        };
-        
+"use strict";
 
-    }
-
-    plusOne() {
-        this.setState( (prevState) => {
-            return {
-                count: prevState.count + 1
-            };
-        }); 
-    }
-    minusOne() {
-        this.setState( (prevState) => {
-            return {
-                count: prevState.count - 1 
-            };
-        }); 
-    }
-    resetAll() {
-        this.setState( (prevState) => {
-            return {
-                count: 0
-            };
-        }); 
-    }
-
-    escondete() {
-        this.setState( (prevState) => {
-            return {
-                visibility: !prevState.visibility
-            };
-        }); 
-        
-    }
-
-    render() {
-        
-        return (<div>
-            <h1>Counter: {this.state.count}</h1>
-            <button onClick={this.plusOne}>+1</button>
-            <button onClick={this.minusOne}>-1</button>
-            <button onClick={this.resetAll}>reset</button>      
-
-
-            <button onClick={this.escondete}>
-            {' '}
-            {this.state.visibility ? 'Escondete!' : 'traeme de vuelta'}{' '}
-            </button>
-            <p> {this.state.visibility ? 'aca que onda' : ''} </p>
-
-            </div>);
-    }
-}
-
-
-
-
-
-
-ReactDOM.render(<Counter />, document.getElementById('app'));
-
+alert("EN PLAYGROUND");
 
 // let user = {
 //     name: 'EL DIEGO ',
@@ -78,7 +9,7 @@ ReactDOM.render(<Counter />, document.getElementById('app'));
 //     opt: ['one','two'],
 //     prntPlaces(){
 //         return this.lugar.map((city)=> this.name + 'vivio en lo de '+city);
-        
+
 //     }
 
 // };
@@ -116,11 +47,9 @@ ReactDOM.render(<Counter />, document.getElementById('app'));
 //         {(user.age && user.age >= 18 ) && <p>Age: {user.age}</p>}
 //         {getLocation(user.lugar)}
 //         {user.opt.length >=0 && <p>Opciones: {user.opt[0]} {user.opt[1]}</p>}
-        
+
 //     </div>
 // );
-
-
 
 
 // let appRoot = document.getElementById('app');
@@ -134,12 +63,12 @@ ReactDOM.render(<Counter />, document.getElementById('app'));
 //             <button onClick={addOne}>+1</button>
 //             <button onClick={resetR}>0</button>
 //             <button onClick={minusOne}>-1</button>
-    
+
 //             <h1> {user.name ? user.name : 'anonimo'} </h1> 
 //             {(user.age && user.age >= 18 ) && <p>Age: {user.age}</p>}
 //             {getLocation(user.lugar)}
 //             {user.opt.length >=0 && <p>Opciones: {user.opt[0]} {user.opt[1]}</p>}
-            
+
 //         </div>
 //     );
 

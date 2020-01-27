@@ -1,108 +1,147 @@
-console.log("app running");
-// babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
-//live-server public
-//JSX - Javascript XML
-
-// const React = require('react'); 
-
-let app = {
-    title: 'IndescApp',
-    edad: 8,
-    lugar: ['buenos aires','lo de tu vieja'],
-    options: []
-   
-
-};
-
-
-
-const onFormSubmit = (e)=>{
-    e.preventDefault();
-    console.log("formSubtmited");
-
-    const option = e.target.elements.option.value;
-    if(option){
-        app.options.push(option);
-        e.target.elements.option.value = "";
-        rendNew();
+class IndecApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+        this.state = {
+            options: ['thing1','thing2']
+        }
+    }
+    //handleDeleteOptions
+    handleDeleteOptions(){
+        this.setState(() => {
+            return {
+                options:[]
+            };
+        });
     }
 
+    render() {
+        const title = "IndecApp"
+        const subtitle = "subtitle of indecApp"
+        return (<div>
+        <Header title={title} subtitle={subtitle}/>
+        <Action hasOptions={this.state.options.length > 0} />
+        <Options 
+            options={this.state.options}
+            handleDeleteOptions={this.handleDeleteOptions}
+        />
+        <AddOption />
+    
+    
+        </div>);
+    }
 }
 
-//removeall
-const removeOnSub = ()=>{
-    app.options =[];
-    console.log("borranding");
-    rendNew();
+
+
+
+class Header extends React.Component {
+    render() {
+        return (<div>
+                <h1>{this.props.title}</h1>
+                <p>{this.props.subtitle}</p>
+            </div>
+        );
+    }
+}
+class Action extends React.Component {
+    handlePick() {
+
+        alert('handlepick');
+    }
+    render() {
+        return <button 
+        onClick={this.handlePick}
+        disabled={!this.props.hasOptions}
+        > what should i do </button>
+    }
 }
 
-// DECISION
-const makeDecision = () => {
-    const rndNum = Math.floor(Math.random() * app.options.length);
-    const option = app.options[rndNum];
-    alert(option);
-}
-
-
-let template2 = (
-    <div>
+//remove button
+//setup handler
+class Options extends React.Component {
+    
+    render() {
+        //setup options props
+        //render length
         
-             
-    <h1>{app.title} </h1> 
-    <p>Cantidad de opciones: {app.options.length}</p>
 
-       
-    <form onSubmit={onFormSubmit}>
-    <input type="text" name="option"></input>
-    <button>AddOpt</button>
-    <button onClick={removeOnSub}>delete</button>
-    <button onClick={makeDecision}>DECISION</button>
+        return (
+            <div>
+            <p>Opciones ({this.props.options.length}):</p>
+                <div>
 
-    </form>
+                    <button onClick={this.props.handleDeleteOptions}>remove all</button>
+                
+                    {
+                        this.props.options.map(option =>{
+                            return <p key={option}> <Option key={option} optionText={option}/> </p>
+                        })
+                    }
+                
+                </div>      
+                
+            </div>
+        );
+    }
+}
 
-
-
-
-        
-    </div>
-);
-
-let appRoot = document.getElementById('app');
-ReactDOM.render(template2, appRoot);
-
-const rendNew = ()=>{
-    let template2 = (
-        <div>
+class Option extends React.Component {
+    removeOne(){
+        alert('remove one')
+    }
+    render() {
+        return (<div>
             
-        <h1>{app.title} </h1> 
-        <p>Cantidad de opciones: {app.options.length}</p>
+            <p>Opcion:{this.props.optionText} <button onClick={this.removeOne}>Remove</button></p>
+            
+            </div>);
+    }
+}
 
-        {
-            app.options.map((num)=>{
-                return <p key={num}>Tarea: {num}</p>
-            })
+/**
+ * Setun form with tex input and submit button
+ * wiere up onSubmit
+ * handleOption ->get value tiped
+ * **/
+
+
+
+
+class AddOption extends React.Component {
+ 
+    onFormSubmit (element) {
+        element.preventDefault();
+      
+      const option = element.target.elements.option.value.trim();
+        if (option) {
+          element.target.elements.option.value = '';
+          
         }
 
 
 
-        
-        <form onSubmit={onFormSubmit}>
-        <input type="text" name="option"></input>
-        <button>AddOpt</button>
-        <button onClick={removeOnSub}>delete</button>
-        <button disabled={app.options.length == 0} onClick={makeDecision}>DECISION</button>
-        </form>
+      };
+   handleOption() {
+       alert('handling options');
+   }
+    render() {
+        return (<div>
+            <form onSubmit={this.onFormSubmit}>
 
-
-    
+                <input type="text" name="option"></input>
             
-        </div>
-    );
-    
-    let appRoot = document.getElementById('app');
-    ReactDOM.render(template2, appRoot);
-
-
+                 <button type="submit"> Submit </button>
+            
+            </form>
+            
+            </div>); 
+    }
 }
 
-rendNew();
+
+
+
+
+
+ReactDOM.render(<IndecApp />, document.getElementById("app"));

@@ -1,9 +1,14 @@
 {
-  "name": "React-Indecision",
+  "name": "ReactIndecision",
   "version": "1.0.0",
   "main": "index.js",
   "author": "MatiasJuncos",
   "license": "MIT",
+  "scripts": {
+    "start": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
+    "test": "babel playground/play.js --out-file=public/scripts/app.js --presets=env,react --watch"
+
+  },
   "dependencies": {
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1"
