@@ -25,10 +25,41 @@ var IndecApp = function (_React$Component) {
         };
         return _this;
     }
-    //handleDeleteOptions
-
 
     _createClass(IndecApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            try {
+                var json = localStorage.getItem('options');
+                var options = JSON.parse(json);
+                if (options) {
+                    this.setState(function () {
+                        options;
+                    });
+                }
+                console.log('componentDidMount');
+            } catch (e) {
+                //donothing
+            }
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            if (prevState.options.length !== this.state.options.length) {
+                var json = JSON.stringify(this.state.options);
+                localStorage.setItem('options', json);
+                console.log('SavingData');
+            }
+            // this.state
+            // this.props
+            // prevProps, prevState
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('componentWillUnmount');
+        }
+    }, {
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
@@ -173,6 +204,11 @@ var Options = function Options(props) {
             { onClick: props.handleDeleteOptions },
             'remove all'
         ),
+        props.options.length == 0 && React.createElement(
+            'p',
+            null,
+            'Plis mete unos datos ameo'
+        ),
         props.options.map(function (option) {
             return React.createElement(Option, {
                 key: option,
@@ -261,9 +297,11 @@ var AddOption = function (_React$Component2) {
                 return { error: error };
             });
 
-            element.target.elements.option.value = '';
-            element.target.elements.option.focus();
-            // element.target.elements.option.select();
+            if (!error) {
+                element.target.elements.option.value = '';
+                element.target.elements.option.focus();
+                // element.target.elements.option.select();
+            }
         }
     }, {
         key: 'render',
