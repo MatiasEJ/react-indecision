@@ -1,13 +1,15 @@
 // // import './util.js'
-import { isAdult, canDrink } from './util.js';
+//install > import > use
+// import validator from 'validator';
+// import senior, { isAdult, canDrink } from './util.js';
+// console.log("app.js webpackRunning!!");
+// let age = 180
+// console.log( isAdult(age)+' y '+canDrink(age));
+// console.log(validator.isEmail('test@juan.com'));
 
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log("app.js webpackRunning!!");
-let age = 18
-console.log( isAdult(age)+' y '+canDrink(age));
+const template = <p>TESTING</p>
 
-
-
-//person.js
-//export isAdult > 18 = true
-//export canDrink true 18
+ReactDOM.render(template, document.getElementById('app'));

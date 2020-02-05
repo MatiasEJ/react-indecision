@@ -1,24 +1,24 @@
 {
-  "name": "ReactIndecision",
+  "name": "reactindec",
   "version": "1.0.0",
   "main": "index.js",
   "author": "MatiasJuncos",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public",
-   
-    "start": "webpack --watch",
-    "test": "babel playground/play.js --out-file=public/scripts/app.js --presets=env,react --watch"
+    "start": "webpack --watch"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "1.5.2",
-    "babel-preset-react": "6.24.1",
+    "@babel/core": "^7.8.4",
+    "babel-loader": "^8.0.6",
     "live-server": "^1.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "validator": "^12.2.0",
     "webpack": "^4.41.5"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.7.4",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
