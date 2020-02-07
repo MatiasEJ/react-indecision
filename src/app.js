@@ -9,7 +9,12 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import IndecApp from './Components/IndecApp'
+import 'normalize.css/normalize.css'
+import './styles/styles.scss'
 
-const template = <p>TESTING</p>
 
-ReactDOM.render(template, document.getElementById('app'));
+
+ReactDOM.render(<IndecApp  />, document.getElementById("app"));
+
+

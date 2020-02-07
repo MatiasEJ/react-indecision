@@ -1,0 +1,23 @@
+.header {
+    background: $off-black;
+    margin-bottom: 4.8rem;
+    padding: 1.6rem;
+
+   
+}
+
+.header__title {
+    font-size: $b-size;
+    font-weight: 1000;
+    color:  rgb(196, 180, 180);
+    margin: 0;
+   
+}
+.header__subtitle {
+    font-size: $m-size;
+    font-weight: 500;
+    color: rgb(223, 82, 82);
+    margin: 0;
+
+   
+}
