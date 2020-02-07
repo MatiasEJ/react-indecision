@@ -36,7 +36,9 @@ export default class AddOption extends React.Component {
 
                 <input type="text" name="option"></input>
             
-                 <button type="submit"> Submit </button>
+                 <button
+                 className="button" 
+                 type="submit"> Submit </button>
             
             </form>
             

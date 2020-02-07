@@ -1,0 +1,30 @@
+.widget {
+    background: $light-blue;
+}
+
+
+.widget-header {
+    background-color: darken($light-dark, $amount: 20%);
+    padding: $m-size;
+    display: flex;
+    justify-content: space-between;
+}
+
+.widget-header__title {
+    margin: 0;
+}
+
+.widget-msg {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    font-family: monospace;
+}
+
+.widget-option{
+    
+    padding: $m-size;
+    display: flex;
+    justify-content: space-between;
+}
