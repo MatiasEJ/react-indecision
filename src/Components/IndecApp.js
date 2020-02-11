@@ -12,7 +12,7 @@ import OptionModal from './OptionModal'
 
 export default class IndecApp extends React.Component {
     state = {
-        options: ['matias', 'aye'],
+        options: ['Matias', 'Ayelen'],
         selectedOption: undefined
     };
     // constructor(props) {
@@ -118,12 +118,14 @@ export default class IndecApp extends React.Component {
                     handleDeleteOpt={this.handleDeleteOpt}
                     />
                     <AddOption
+                    className="addOption"
                     handleAddOption = {this.handleAddOption}
                     />
                 </div>
             </div>
 
             <OptionModal 
+            
             selectedOption={this.state.selectedOption} 
             handleCloseModal={this.handleCloseModal}
             

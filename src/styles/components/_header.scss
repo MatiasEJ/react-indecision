@@ -7,17 +7,18 @@
 }
 
 .header__title {
-    font-size: $b-size;
+    font-size: 2rem;
     font-weight: 1000;
     color:  #ffffff;
     margin: 0;
    
 }
 .header__subtitle {
-    font-size: $m-size;
+    font-size: 1.5rem;
     font-weight: 500;
-    color: rgb(223, 82, 82);
+    color: #df5252;
     margin: 0;
+    font-style: italic;
 
    
 }

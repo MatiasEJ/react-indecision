@@ -4,7 +4,7 @@
     border-bottom: 0.6rem solid darken($purple, $amount: 10%) ;
     color: white;
     font-size: $b_size;
-    
+    font-family: monospace;
     padding: 2.4rem;
     margin-bottom: $m-size;
     width: 100%;
@@ -23,9 +23,32 @@
     color: white;
     padding: 0.6rem;
 }
+.button__modal {
+    background: $purple;
+    flex-grow: 1;
+    border: none;
+    border-bottom: 0.3rem solid darken($purple, $amount: 10%) ;
+    color: white;
+    padding: 1rem;
+}
+
 .button--link {
     background: none;
     border: none;
     color: white;
     padding:0;
+}
+
+
+@media (min-width: 45rem){
+    .button__modal {
+    background: #88094d;
+    
+    border: none;
+    border-bottom: 0.3rem solid #580632;
+    color: white;
+    padding: 0.6rem;
+    max-width: 7rem;
+    }
+
 }
