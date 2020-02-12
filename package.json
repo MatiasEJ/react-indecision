@@ -5,8 +5,8 @@
   "author": "MatiasJuncos",
   "license": "MIT",
   "scripts": {
-    "postinstall": "webpack -p",
-    "start": "webpack",
+    "build-prod": "webpack -p --env production",
+    "build": "webpack",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
