@@ -5,14 +5,14 @@ const Options = (props) => {
     return (<div>
         
             <div className="widget-header">
-            <h3 className="widget-header__title">Your Options</h3>
+            <h3 className="widget-header__title">Opciones</h3>
             <button
             className="button button--link"
-            onClick={props.handleDeleteOptions}>Remove All</button>
+            onClick={props.handleDeleteOptions}>Eliminar lista</button>
             </div>
 
             <div>
-                {props.options.length == 0 && <p className="widget-msg">Plis mete unos datos ameo</p>}
+                {props.options.length == 0 && <p className="widget-msg">Faltan Datos</p>}
                 {
                     props.options.map((option,index) =>{
                     return (<Option 

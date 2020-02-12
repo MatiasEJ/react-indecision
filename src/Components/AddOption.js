@@ -39,7 +39,7 @@ export default class AddOption extends React.Component {
             
             <button
             className="button__modal"
-            type="submit"> Submit </button>
+            type="submit"> Agregar </button>
             
             
             </form>

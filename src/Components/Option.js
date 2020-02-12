@@ -11,7 +11,7 @@ const Option = (props)=>{
             props.handleDeleteOpt(props.optionText)
         }}
         >
-        Remove
+        Eliminar
         </button>
         </div>
         );
