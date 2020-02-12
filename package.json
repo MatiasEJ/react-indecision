@@ -5,9 +5,8 @@
   "author": "MatiasJuncos",
   "license": "MIT",
   "scripts": {
-    "start": "webpack",
-    "heroku-postbuild": "webpack -p",
-    "build": "webpack",
+    "postinstall": "webpack -p",
+    "start": "node app.js",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
