@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "webpack -p",
-    "start": "node app.js",
+    "start": "webpack",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
